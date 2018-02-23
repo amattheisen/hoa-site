@@ -1,2 +1,2 @@
 # hoa-site
-Homeowners Association Website Template
+A simple Homeowners Association Website Template.

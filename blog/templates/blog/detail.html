@@ -1,0 +1,12 @@
+<h1>{{ post.post_title }}</h1>
+{{ post.post_text }}<br>
+<br>
+<b>{{ post.likes }} Likes.</b> 
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'blog:vote' post.id %}" method="post">
+{% csrf_token %}
+<input type="submit" value="Like" />
+</form>
