@@ -1,8 +1,15 @@
+{% extends "polls/base.html" %}
+
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
-
+{% block title %}
+Lansbrook Polls
+{% endblock %}
+{% block contentheader %}
 <h1>{{ question.question_text }}</h1>
+{% endblock %}
+
+{% block content %}
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
@@ -14,6 +21,4 @@
 {% endfor %}
 <input type="submit" value="Vote" />
 </form>
-
-<br>
-<a href="{% url 'polls:index' %}">Back to Polls list</a>
+{% endblock %}

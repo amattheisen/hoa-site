@@ -1,13 +1,32 @@
+{% extends "polls/base.html" %}
+
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+{% block title %}
+Lansbrook Polls
+{% endblock %}
+{% block contentheader %}
+<h1>Neighborhood Polls.</h1>
+<p>Vote below on topics impacting the neighborhood.</p>
+{% endblock %}
 
+{% block content %}
 {% if latest_question_list %}
-    <ul>
     {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        <article class="style{% cycle '1' '2' '3' '4' '5' '6' %}">
+            <span class="image">
+                <img src={% static 'polls/images/murtle.jpg' %} alt="" />
+            </span>
+            <a href="generic.html">
+            <a href="{% url 'polls:detail' question.id %}">
+                <h2>{{ question.question_text }}</h2>
+                <div class="content">
+                    <p>Click here to vote.</p>
+                </div>
+            </a>
+        </article>
     {% endfor %}
-    </ul>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+{% endblock %}
