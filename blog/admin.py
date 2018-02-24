@@ -20,7 +20,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('post_title', 'pub_date', 'was_published_recently')
+    list_display = ('post_title', 'pub_date', 'likes', 'was_published_recently')
     list_filter = ['pub_date']
     search_fields = ['post_title', 'post_text']
 

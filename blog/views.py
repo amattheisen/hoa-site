@@ -25,6 +25,12 @@ class DetailView(generic.DetailView):
     model = Post
     template_name = 'blog/detail.html'
 
+    def get_queryset(self):
+        """
+        Excludes any posts that aren't published yet.
+        """
+        return Post.objects.filter(pub_date__lte=timezone.now())
+
 
 def vote(request, post_id):
     post = get_object_or_404(Post, pk=post_id)

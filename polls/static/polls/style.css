@@ -12,3 +12,6 @@ Body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+a:any-link {
+    color: white;
+}
