@@ -1,0 +1,45 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block title %}
+Lansbrook
+{% endblock %}
+{% block contentheader %}
+<h1>Our Neighborhood</h1>
+<p>
+The area we call Lansbrook today was the estate of the Urschel family in the 1940's. The estate consisted of 180 acres and was located six miles west of the town of Britton. At that time it was a place out in the country with an iron fence around it. Mr. Urschel was in the oil business. Mrs. Urschel, fortunately for us today, loved gardening. She had a greenhouse to supply the many beautifully landscaped areas of the estate, which included a rock garden and a lake full of water lilies.
+</p>
+<p>
+There were seven lakes on the property and a large number of bridges. The Urschel's also built the state's second swimming pool. It was beautifully adorned in ceramic tile and a log bath house was built adjacent to the pool. These are the same facilities that we share today.
+</p>
+<p>
+On 1 November 1944 the Urschel's sold the estate to Stanolind Oil Company, which eventually became Panamerican Petroleum. The land was then used as a recreational area for the employees. During this time, the main house was totally destroyed by fire.
+</p> 
+<p>
+As Oklahoma City spread west of May Avenue, developers anticipated the needs of the growing population. Dick Coyle, a local developer who had previously developed Lakehurst west of May and north of Wilshire, bought the 180 acres and was granted the first Planned Unit Development (PUD) in Oklahoma City, allowing for multiple use of the land. In naming the area, he continued the style chosen for Lakehurst: using English street names. He used the first part of a Lakehurst street, Lansdowne, for the first part of the name Lansbrook. The second part of the names comes from the fact that the area had a brook running through it. Dick Coyle left intact the pool and bath house, the present lake, the tennis court, and many of the landscaped areas as open greenbelt spaces for all residents to enjoy.
+</p>
+<p>
+Lansbrook now consists of 396 single-family homes, three duplexes, three vacant lots, and, accordingly, a great number of residents who still enjoy both the feeling of being "out in the country" and the remnants of the beautiful landscaping begun by Mrs. Urschel so long ago.
+</p>
+{% endblock %}
+
+{% block content %}
+{% if app_list %}
+    {% for app in app_list %}
+        <article class="style{% cycle '1' '2' '3' '4' '5' '6' %}">
+            <span class="image">
+                <img src={% static 'home/images/lake.jpg' %} alt="" />
+            </span>
+            <a href="/{{ app.app_title }}/">
+                <h2>{{ app.app_title }}</h2>
+                <div class="content">
+                    <p>Click here.</p>
+                </div>
+            </a>
+        </article>
+    {% endfor %}
+{% else %}
+    <p>No links are available.</p>
+{% endif %}
+{% endblock %}

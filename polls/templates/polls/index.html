@@ -6,7 +6,7 @@
 Lansbrook Polls
 {% endblock %}
 {% block contentheader %}
-<h1>Neighborhood Polls.</h1>
+<h1>Our Neighborhood Polls</h1>
 <p>Vote below on topics impacting the neighborhood.</p>
 {% endblock %}
 
@@ -17,7 +17,6 @@ Lansbrook Polls
             <span class="image">
                 <img src={% static 'polls/images/murtle.jpg' %} alt="" />
             </span>
-            <a href="generic.html">
             <a href="{% url 'polls:detail' question.id %}">
                 <h2>{{ question.question_text }}</h2>
                 <div class="content">

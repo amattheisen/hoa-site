@@ -1,13 +1,31 @@
+{% extends "blog/base.html" %}
+
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}" />
+{% block title %}
+Lansbrook Blog 
+{% endblock %}
+{% block contentheader %}
+<h1>Our Neighborhood Blog</h1>
+<p>Read articles about the nighborhood below.</p>
+{% endblock %}
 
+{% block content %}
 {% if latest_post_list %}
-    <ul>
     {% for post in latest_post_list %}
-        <li><a href="{% url 'blog:detail' post.id %}">{{ post.category }} - {{ post.post_title }}</a></li>
+        <article class="style{% cycle '1' '2' '3' '4' '5' '6' %}">
+            <span class="image">
+                <img src={% static 'polls/images/murtle.jpg' %} alt="" />
+            </span>
+            <a href="{% url 'blog:detail' post.id %}">
+                <h2>{{ post.category }} - {{ post.post_title }}</h2>
+                <div class="content">
+                    <p>Click here to read.</p>
+                </div>
+            </a>
+        </article>
     {% endfor %}
-    </ul>
 {% else %}
     <p>No posts are available.</p>
 {% endif %}
+{% endblock %}

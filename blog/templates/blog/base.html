@@ -13,12 +13,11 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/main.css' %}" >
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/main.css' %}" >
         <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
         {% block headextras %}{% endblock %}
     </head>
-    <!--body class=polls-->
     <body>
         <!-- Wrapper -->
             <div id="wrapper">
@@ -28,9 +27,8 @@
                         <div class="inner">
 
                             <!-- Logo -->
-                                <!--a href="/polls/" class="logo"-->
                                 <a href="{% url 'home:index' %}" class="logo">
-                                    <span class="symbol"><img src={% static 'polls/images/logo.png' %} alt="" /></span><span class="title">Lansbrook</span>
+                                    <span class="symbol"><img src={% static 'blog/images/logo.png' %} alt="" /></span><span class="title">Lansbrook</span>
                                 </a>
 
                             <!-- Nav -->
@@ -201,6 +199,7 @@
                                 </article>
                                 {% endblock %}
                             </section>
+                            {% block belowcontent %}{% endblock %}
                         </div>
                     </div>
                 <!-- Footer -->
@@ -247,11 +246,11 @@
             </div>
 
         <!-- Scripts -->
-            <script src={% static 'polls/js/jquery.min.js' %}></script>
-            <script src={% static 'polls/js/skel.min.js' %}></script>
-            <script src={% static 'polls/js/util.js' %}></script>
-            <!--[if lte IE 8]><script src="{% static 'polls/js/ie/respond.min.js' %}"></script><![endif]-->
-            <script src="{% static 'polls/js/main.js' %}"></script>
+            <script src={% static 'blog/js/jquery.min.js' %}></script>
+            <script src={% static 'blog/js/skel.min.js' %}></script>
+            <script src={% static 'blog/js/util.js' %}></script>
+            <!--[if lte IE 8]><script src="{% static 'blog/js/ie/respond.min.js' %}"></script><![endif]-->
+            <script src="{% static 'blog/js/main.js' %}"></script>
 
     </body>
 </html>
