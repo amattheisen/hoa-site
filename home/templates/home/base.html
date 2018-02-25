@@ -18,7 +18,6 @@
         <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
         {% block headextras %}{% endblock %}
     </head>
-    <!--body class=polls-->
     <body background="{% block backgroundimage %}{% static 'home/images/sky.jpg' %}{% endblock %}"
      >
         <!-- Wrapper -->
@@ -29,7 +28,6 @@
                         <div class="inner">
 
                             <!-- Logo -->
-                                <!--a href="/polls/" class="logo"-->
                                 <a href="{% url 'home:index' %}" class="logo">
                                     <span class="symbol"><img src={% static 'home/images/logo.png' %} alt="" /></span><span class="title">Lansbrook</span>
                                 </a>
@@ -254,11 +252,11 @@
             </div>
 
         <!-- Scripts -->
-            <script src={% static 'polls/js/jquery.min.js' %}></script>
-            <script src={% static 'polls/js/skel.min.js' %}></script>
-            <script src={% static 'polls/js/util.js' %}></script>
-            <!--[if lte IE 8]><script src="{% static 'polls/js/ie/respond.min.js' %}"></script><![endif]-->
-            <script src="{% static 'polls/js/main.js' %}"></script>
+            <script src={% static 'home/js/jquery.min.js' %}></script>
+            <script src={% static 'home/js/skel.min.js' %}></script>
+            <script src={% static 'home/js/util.js' %}></script>
+            <!--[if lte IE 8]><script src="{% static 'home/js/ie/respond.min.js' %}"></script><![endif]-->
+            <script src="{% static 'home/js/main.js' %}"></script>
 
     </body>
 </html>
