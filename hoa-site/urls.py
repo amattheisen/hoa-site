@@ -27,8 +27,14 @@ from django.conf import settings
 
 
 urlpatterns = [
+    path('', include('home.urls')),
+    #Add Django site authentication urls (for login, logout, password management)
+    path('accounts/', include('django.contrib.auth.urls')),
     path('home/', include('home.urls')),
     path('blog/', include('blog.urls')),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+
+# Add static file server
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

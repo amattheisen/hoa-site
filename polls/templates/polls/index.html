@@ -1,10 +1,15 @@
-{% extends "polls/base.html" %}
+{% extends "home/base.html" %}
 
 {% load static %}
 
 {% block title %}
 Lansbrook Polls
 {% endblock %}
+
+{% block headextras %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/override.css' %}" >
+{% endblock %}
+
 {% block contentheader %}
 <h1>Our Neighborhood Polls</h1>
 <p>Vote below on topics impacting the neighborhood.</p>

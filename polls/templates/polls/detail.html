@@ -1,16 +1,20 @@
-{% extends "polls/base.html" %}
+{% extends "home/base.html" %}
 
 {% load static %}
+
+{% block headextras %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/override.css' %}" >
+{% endblock %}
 
 {% block title %}
 Lansbrook Polls
 {% endblock %}
+
 {% block contentheader %}
 <h1>{{ question.question_text }}</h1>
 {% endblock %}
 
 {% block content %}
-
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 <form action="{% url 'polls:vote' question.id %}" method="post">
@@ -21,4 +25,8 @@ Lansbrook Polls
 {% endfor %}
 <input type="submit" value="Vote" />
 </form>
+{% endblock %}
+
+{% block belowcontent %}
+<a href="{% url 'polls:results' question.id %}">View Results</a>
 {% endblock %}

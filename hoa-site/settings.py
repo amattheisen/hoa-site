@@ -57,7 +57,9 @@ ROOT_URLCONF = 'hoa-site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'hoa-site', 'templates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'hoa-site', 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -113,3 +115,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'hoa-site', 'static'),
 ]
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+# see https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
+LOGIN_REDIRECT_URL = '/'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

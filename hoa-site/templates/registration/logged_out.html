@@ -1,0 +1,14 @@
+{% extends "home/base.html" %}
+
+{% block title %}
+Lansbrook Logout
+{% endblock %}
+{% block contentheader %}
+<h1>Logged Out</h1>
+{% endblock %}
+{% block content %}
+<p>Successfully logged out!</p>  
+{% endblock %}
+{% block belowcontent %}
+<a href="{% url 'login'%}">Click here to login again.</a>
+{% endblock %}

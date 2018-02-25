@@ -19,7 +19,8 @@
         {% block headextras %}{% endblock %}
     </head>
     <!--body class=polls-->
-    <body>
+    <body background="{% block backgroundimage %}{% static 'home/images/sky.jpg' %}{% endblock %}"
+     >
         <!-- Wrapper -->
             <div id="wrapper">
 
@@ -52,6 +53,11 @@
                             <li><a href="{% url 'polls:index' %}">Polls</a></li>
                             <li><a href="{% url 'blog:index' %}">Blog</a></li>
                             <li><a href="elements.html">Elements</a></li>
+                            {% if user.is_authenticated %}
+                                 <li><a href="{% url 'logout'%}?next={{ request.path }}">Logout ({{ user.get_username }})</a></li>   
+                               {% else %}
+                                 <li><a href="{% url 'login'%}?next={{ request.path }}">Login</a></li>   
+                               {% endif %} 
                         </ul>
                         {% endblock %}
                     </nav>
@@ -201,6 +207,7 @@
                                 </article>
                                 {% endblock %}
                             </section>
+                            {% block belowcontent %}{% endblock %}
                         </div>
                     </div>
                 <!-- Footer -->

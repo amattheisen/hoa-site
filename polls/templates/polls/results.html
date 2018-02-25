@@ -1,10 +1,15 @@
-{% extends "polls/base.html" %}
+{% extends "home/base.html" %}
 
 {% load static %}
+
+{% block headextras %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/override.css' %}" >
+{% endblock %}
 
 {% block title %}
 Lansbrook Polls
 {% endblock %}
+
 {% block contentheader %}
 <h1>{{ question.question_text }}</h1>
 {% endblock %}
@@ -13,9 +18,11 @@ Lansbrook Polls
 <p>
 <ul>
 {% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    <li>{{ choice.votes }} vote{{ choice.votes|pluralize }} -- {{ choice.choice_text }}</li>
 {% endfor %}
 </ul>
-</p>
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+{% endblock %}
+
+{% block belowcontent %}
+<a href="{% url 'polls:detail' question.id %}">Vote</a>
 {% endblock %}

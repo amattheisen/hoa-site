@@ -1,6 +1,10 @@
-{% extends "blog/base.html" %}
+{% extends "home/base.html" %}
 
 {% load static %}
+
+{% block headextras %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/override.css' %}" >
+{% endblock %}
 
 {% block title %}
 Lansbrook Blog 

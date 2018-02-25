@@ -1,6 +1,10 @@
-{% extends "blog/base.html" %}
+{% extends "home/base.html" %}
 
 {% load static %}
+
+{% block headextras %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/override.css' %}" >
+{% endblock %}
 
 {% block title %}
 Lansbrook Blog 
@@ -9,6 +13,7 @@ Lansbrook Blog
 <h1>Our Neighborhood Blog</h1>
 <p>Read articles about the nighborhood below.</p>
 {% endblock %}
+
 
 {% block content %}
 {% if latest_post_list %}
