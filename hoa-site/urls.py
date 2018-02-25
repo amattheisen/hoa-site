@@ -23,7 +23,7 @@ import home.views
 
 urlpatterns = [
     re_path('^$', home.views.IndexView.as_view()),
-    path('home', include('home.urls')),
+    path('home/', include('home.urls')),
     #Add Django site authentication urls (for login, logout, password management)
     path('accounts/', include('django.contrib.auth.urls')),
     path('blog/', include('blog.urls')),
