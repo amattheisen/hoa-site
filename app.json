@@ -1,0 +1,22 @@
+{
+  "name": "Heroku Python HOA Site",
+  "description": "A Website for a homeowner's association.",
+  "image": "heroku/python",
+  "repository": "https://github.com/amattheisen/hoa-site",
+  "keywords": ["python", "django", "heroku", "postgresql"],
+  "addons": [ "heroku-postgresql"],
+  "env": {
+    "SECRET_KEY": {
+      "description": "The secret key for the Django application.",
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python manage.py collectstatic --noinput",
+        "test": "python manage.py test"
+      }
+    }
+  }
+}

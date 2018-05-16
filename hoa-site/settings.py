@@ -112,9 +112,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'hoa-site', 'static'),
-]
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static'),
+#]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 # see https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication

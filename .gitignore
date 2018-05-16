@@ -105,3 +105,9 @@ ENV/
 
 # Mac finder crust
 .DS_Store
+
+# static collected files
+static/
+
+# environmental vars
+.env
